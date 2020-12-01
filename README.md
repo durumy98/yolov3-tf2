@@ -185,6 +185,9 @@ python train.py \
 	--mode fit --transfer none \
 	--batch_size 16 \
 	--epochs 10 \
+
+(In a line)
+python train.py --dataset ./data/voc2012_train.tfrecord --val_dataset ./data/voc2012_val.tfrecord --classes ./data/voc2012.names --num_classes 20 --mode fit --transfer none --batch_size 16 --epochs 10
 ```
 
 I have tested this works 100% with correct loss and converging over time.
@@ -203,12 +206,18 @@ python detect.py \
 	--weights ./checkpoints/yolov3_train_5.tf \
 	--image ./data/street.jpg
 
+(In a line)
+python detect.py --classes ./data/voc2012.names --num_classes 20 --weights ./checkpoints/yolov3_train_5.tf --image ./data/street.jpg
+
 # detect from validation set
 python detect.py \
 	--classes ./data/voc2012.names \
 	--num_classes 20 \
 	--weights ./checkpoints/yolov3_train_5.tf \
 	--tfrecord ./data/voc2012_val.tfrecord
+	
+(In a line)
+python detect.py --classes ./data/voc2012.names --num_classes 20 --weights ./checkpoints/yolov3_train_5.tf --tfrecord ./data/voc2012_val.tfrecord
 ```
 
 You should see some detect objects in the standard output and the visualization at `output.jpg`.
