@@ -43,7 +43,20 @@ conda activate yolov3-tf2-gpu
 ```
 
 #### The "conda-gpu.yml" sets all dependences as below.
-
+````
+- dependencies:
+  - python==3.7
+  - pip
+  - matplotlib
+  - opencv
+  - cudnn
+  - cudatoolkit==10.1.243
+  - pip:
+    - tensorflow-gpu==2.1.0rc1
+    - lxml
+    - tqdm
+    - -e .
+````
 
 #### Pip
 
