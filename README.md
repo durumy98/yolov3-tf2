@@ -42,6 +42,9 @@ conda env create -f conda-gpu.yml
 conda activate yolov3-tf2-gpu
 ```
 
+#### The "conda-gpu.yml" sets all dependences as below.
+
+
 #### Pip
 
 ```bash
